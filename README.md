@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the **playbook file**  may be used to install only certain pieces of it, such as Filebeat.
 
-  ![playbooks](ansible)
+  ![playbooks folder](ansible)
 
 This document contains the following details:
 - **Description of the Topology**
@@ -102,12 +102,5 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook file to ``/etc/ansible/playbooks``.
-- Update the ``/etc/ansible/host`` file to include the private IP of the Virtual Machine in which you are installing ELK
-- Run the playbook, and navigate to  to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Update the ``/etc/ansible/host`` file to include the private IP of the Virtual Machine in which you are installing ELK. You can specify which machine to run the installation on by creating an ``[elk]`` group inside the ``/etc/ansible/host`` file and updating the playbook to list ``elk`` under ``host:``.
+- Run the playbook, and navigate ``http://[ELK-VM-IP]:5601/app/kibana`` to  to check that the installation worked as expected.
